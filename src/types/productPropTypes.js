@@ -5,6 +5,8 @@ export const buttonPropTypes = {
     text: string.isRequired,
     handleClick: func.isRequired,
     classes:string.isRequired,
+    icon:string,
+    name:string,
   };
   export const productPropTypes = {
     productName: string.isRequired,
