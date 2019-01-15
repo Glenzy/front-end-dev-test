@@ -6,8 +6,9 @@ import * as actions from '../../actions/productActions';
 import Product from './Product.jsx';
 
 export class ProductPage extends Component {
-    handleClick = () =>{
-       return console.log('add to cart button');
+    handleClick = (event) => {
+        console.log('event', event.target);
+       return this.props.actions.addToCart(event.target.name);
     }
     render(){
         const productsList = this.props.productsList;
@@ -15,9 +16,9 @@ export class ProductPage extends Component {
             <section className="product-list">
                 <Container >
                     <Row className="row-eq-height">
-                        {productsList.map((product)=>{
-                            if(product.isPublished && !product.isInCart){
-                                return <Product  {...product} handleClick={this.handleClick} />
+                        {productsList.map((product, index)=>{
+                            if(product.isPublished === "true"){
+                                return <Product  key={index} id={index} {...product} handleClick={this.handleClick} />
                             } else {
                                 return;
                             }

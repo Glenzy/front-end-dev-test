@@ -55,7 +55,7 @@ section {
     }
 }
 
-.add-to-cart {
+button.add-to-cart {
     background-color: #1964c8;
     transition: all 0.3s ease-in-out;
     display: block;
@@ -63,5 +63,8 @@ section {
     color: #fff;
     &:hover {
         background: #00aaf3;
+    }
+    .fa-cart-plus {
+        margin-right: 5px;
     }
 }
