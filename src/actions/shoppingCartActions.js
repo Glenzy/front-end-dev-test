@@ -5,6 +5,5 @@ export function removeFromCart(productName){
 }
 
 export function toggleCart(){
-    console.log('toggleCart action');
     return {type: types.TOGGLE_CART}
 }
