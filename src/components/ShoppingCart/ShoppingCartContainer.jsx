@@ -19,13 +19,13 @@ export class ShoppingCartContainer extends Component {
         <section className={cartIsOpen ? 'shopping-cart shown' : 'shopping-cart'} name="shopping-cart">
             <Container>
                 <Row>
-                    <Col col="col">
-                        <FontAwesomeIcon icon={"shopping-cart"}  onClick={this.toggleCart}/>
-                        <h5 className="d-none-xs">Shopping cart</h5>
-                    </Col>
                     <Card>
                         <ListGroup>
-                            { itemsInCart > 0 ? null : <ListGroup.Item>No items in cart</ListGroup.Item>}
+                            <ListGroup.Item onClick={this.toggleCart}>
+                                <FontAwesomeIcon icon={"shopping-cart"}  />
+                                <h5 className="d-none d-sm-inline-block">Shopping cart</h5>
+                            </ListGroup.Item>
+                            { itemsInCart > 0 ? null : <ListGroup.Item className="cart-item">No items in cart</ListGroup.Item>}
                             {
                                 productsList.map((product, index) => {
                                     if (product.inCart) {
