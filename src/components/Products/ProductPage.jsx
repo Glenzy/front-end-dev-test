@@ -7,7 +7,6 @@ import Product from './Product.jsx';
 
 export class ProductPage extends Component {
     handleClick = (event) => {
-        console.log('event', event.target);
        return this.props.actions.addToCart(event.target.name);
     }
     render(){
@@ -17,7 +16,7 @@ export class ProductPage extends Component {
                 <Container >
                     <Row className="row-eq-height">
                         {productsList.map((product, index)=>{
-                            if(product.isPublished === "true"){
+                            if(product.isPublished === "true" && !product.inCart){
                                 return <Product  key={index} id={index} {...product} handleClick={this.handleClick} />
                             } else {
                                 return;
@@ -31,7 +30,7 @@ export class ProductPage extends Component {
 }
 
 function mapStateToProps(state) {
-  return {productsList: state.productsList}
+  return {productsList: state.products.productsList}
 }
 
 function mapDispatchToProps(dispatch) {

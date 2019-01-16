@@ -1,21 +1,41 @@
 import initialState from './initialState';
 
-const productsReducer = (state = initialState.productsList, action) => {
+const productsReducer = (state = initialState, action) => {
     switch(action.type){
         case 'ADD_TO_CART':
-        console.log('state', ...state);
-        return  {
-          ...state.map((product) => {
+        return {
+          ...state,
+          itemsInCart:state.itemsInCart+1,
+          productsList:[
+            ...state.productsList.map((product) => {
+              if(product.productName === action.productName){
+                return {
+                  ...product,
+                inCart:true
+                };
+              }  else {
+                return product;
+              }
+            })
+          ]
+        };
+      case 'REMOVE_FROM_CART':
+      return {
+        ...state,
+        itemsInCart:state.itemsInCart-1,
+        productsList:[
+          ...state.productsList.map((product) => {
             if(product.productName === action.productName){
               return {
                 ...product,
-              inCart:true
+              inCart:false
               };
             }  else {
               return product;
             }
           })
-        };
+        ]
+      };
     default:
       return state;
     }
