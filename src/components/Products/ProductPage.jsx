@@ -13,7 +13,7 @@ export class ProductPage extends Component {
         const productsList = this.props.productsList;
         return (
             <section className="product-list">
-                <Container >
+                <Container fluid>
                     <Row className="row-eq-height">
                         {productsList.map((product, index)=>{
                             if(product.isPublished === "true" && !product.inCart){

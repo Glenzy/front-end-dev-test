@@ -6,7 +6,7 @@ import Button  from '../Button';
 const Product = (props) => {
     const {productName, productImage, price, handleClick} = {...props}; 
     return (
-        <Col col="md-3 sm-4 xs-12 product">
+        <Col col="xs-12 sm-4 md-3 product">
             <h5>{productName}</h5>
             <img src={`${productImage}`} alt={`${productName}`} className="img-fluid" />
             <p>${price}</p>

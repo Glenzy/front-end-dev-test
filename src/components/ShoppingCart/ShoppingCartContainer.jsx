@@ -8,16 +8,19 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 
 export class ShoppingCartContainer extends Component {
     handleClick = (event) => {
-       return this.props.actions.removeFromCart(event.target.name);
+        const clickedElement = event.currentTarget.getAttribute('name');
+       return this.props.actions.removeFromCart(clickedElement);
     }
+//
     render() {
     const {productsList, itemsInCart} = this.props;
         return ( 
-        <section className = "shopping-cart" >
+        <section className = "shopping-cart" name="shopping-cart">
             <Container>
                 <Row>
                     <Col col="col">
-                        <h5><FontAwesomeIcon icon={"shopping-cart"}  /> Shopping cart</h5>
+                        <FontAwesomeIcon icon={"shopping-cart"}  />
+                        <h5 className="d-none">Shopping cart</h5>
                     </Col>
                     <Card>
                         <ListGroup>
