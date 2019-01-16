@@ -23,7 +23,7 @@ body {
 h2 {
     color: $primary;
 }
-
+.wrapper {position:relative;}
 section {
     display: inline-block;
     position: relative;
@@ -32,6 +32,19 @@ section {
     }
     &.shopping-cart {
         width: $cartWidth;
+    }
+    @media(max-width: 576px){
+        &.product-list, &.shopping-cart {width:100%;}
+        &.shopping-cart {
+            position: fixed;
+            top: 10px;
+            transform: translateX(-14%);
+            background:#fff;
+            transition: all 0.3s ease-in-out;
+            &.shown {
+                transform: translateX(-100%);
+            }
+        }
     }
 }
 
@@ -52,6 +65,20 @@ section {
         font-weight: 700;
         margin: 20px auto;
     }
+    @media (min-width: 768px){
+        &.col-md-4 {
+            -ms-flex: 0 0 31.333333%;
+            flex: 0 0 31.333333%;
+            max-width: 31.333333%;
+        }
+    }
+    @media (min-width: 768px){
+        &.col-md-3 {
+            -ms-flex: 0 0 23%;
+            flex: 0 0 23%;
+            max-width: 23%;
+        }
+    }
 }
 
 button.add-to-cart {
@@ -67,27 +94,30 @@ button.add-to-cart {
         margin-right: 5px;
     }
 }
-button.remove-from-cart {
-    background-color: #1964c8;
-    transition: all 0.3s ease-in-out;
-    display: block;
-    margin: 20px auto;
-    color: #fff;
-    &:hover {
-        background: #00aaf3;
-    }
-    .fa-cart-plus {
-        margin-right: 5px;
-    }
-}
+
 
 .shopping-cart {
+    .cart-item {padding:10px;position: relative;}
     col {text-align: center;}
-    img {max-width: 35px; display: inline-block;}
+    img {max-width:20%; display: inline-block;}
     h5 {
         display: inline-block;
-        max-width:75%;
+        max-width: 65%;
         vertical-align: middle;
-        font-size:1rem;
+        font-size: 0.9rem;
+        margin-left: 5px;
+    }
+    .fa-minus-circle {
+           color: #ff5200;
+           cursor: pointer;
+        transition: all 0.3s ease-in-out;
+        font-size: 20px;
+        position: absolute;
+        right:5px;
+        top:36%;
+        transform: rotateY(-50%);
+        &:hover {
+            color: red;
+        }
     }
 }
