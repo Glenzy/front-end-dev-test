@@ -1,5 +1,6 @@
 export default {
     itemsInCart:0,
+    cartIsOpen:false,
     productsList: [
 
     {

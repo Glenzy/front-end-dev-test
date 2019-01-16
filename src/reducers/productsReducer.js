@@ -36,6 +36,11 @@ const productsReducer = (state = initialState, action) => {
           })
         ]
       };
+    case 'TOGGLE_CART':
+      return {
+        ...state,
+        cartIsOpen: !state.cartIsOpen
+      }
     default:
       return state;
     }

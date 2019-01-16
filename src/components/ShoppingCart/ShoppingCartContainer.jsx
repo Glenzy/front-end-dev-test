@@ -11,16 +11,17 @@ export class ShoppingCartContainer extends Component {
         const clickedElement = event.currentTarget.getAttribute('name');
        return this.props.actions.removeFromCart(clickedElement);
     }
-//
+    toggleCart = ()=>  this.props.actions.toggleCart();
+
     render() {
-    const {productsList, itemsInCart} = this.props;
+    const {productsList, itemsInCart, cartIsOpen} = this.props;
         return ( 
-        <section className = "shopping-cart" name="shopping-cart">
+        <section className={cartIsOpen ? 'shopping-cart shown' : 'shopping-cart'} name="shopping-cart">
             <Container>
                 <Row>
                     <Col col="col">
-                        <FontAwesomeIcon icon={"shopping-cart"}  />
-                        <h5 className="d-none">Shopping cart</h5>
+                        <FontAwesomeIcon icon={"shopping-cart"}  onClick={this.toggleCart}/>
+                        <h5 className="d-none-xs">Shopping cart</h5>
                     </Col>
                     <Card>
                         <ListGroup>
@@ -48,7 +49,8 @@ export class ShoppingCartContainer extends Component {
 function mapStateToProps(state) {
     return { 
         productsList: state.products.productsList,
-        itemsInCart: state.products.itemsInCart
+        itemsInCart: state.products.itemsInCart,
+        cartIsOpen:state.products.cartIsOpen,
     }
 }
 
