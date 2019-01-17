@@ -1,7 +1,7 @@
 import React from 'react';
-import { productPropTypes } from '../../types/productPropTypes';
 import { ListGroup } from 'bootstrap-4-react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { shoppinCartItemPropTypes } from '../../types/cartPropTypes';
 
 const ShoppingCartItem = (props) => {
     const {productName, productImage, handleClick} = {...props}; 
@@ -15,6 +15,6 @@ const ShoppingCartItem = (props) => {
 }
 
 ShoppingCartItem.propTypes = {
-    ...productPropTypes,
+    ...shoppinCartItemPropTypes,
 }
 export default ShoppingCartItem;
