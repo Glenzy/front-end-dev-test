@@ -1,7 +1,6 @@
 import React, { Component } from 'react';
 import {connect} from 'react-redux';
 import {bindActionCreators} from 'redux';
-import { Container, Row } from 'bootstrap-4-react';
 import * as actions from '../../actions/productActions';
 import Product from './Product.jsx';
 
@@ -13,8 +12,8 @@ export class ProductPage extends Component {
         const productsList = this.props.productsList;
         return (
             <section className="product-list">
-                <Container fluid>
-                    <Row className="row-eq-height">
+                <div className="container-fluid">
+                    <div className="row row-eq-height">
                         {productsList.map((product, index)=>{
                             if(product.isPublished === "true" && !product.inCart){
                                 return <Product  key={index} id={index} {...product} handleClick={this.handleClick} />
@@ -22,8 +21,8 @@ export class ProductPage extends Component {
                                 return;
                             }
                         })}
-                    </Row>
-                </Container>
+                    </div>
+                </div>
             </section>
         );
     }

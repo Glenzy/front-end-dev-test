@@ -7,11 +7,11 @@ const button = (props) => {
     const {text, handleClick, type, classes, icon, name} = {...props}; 
     return (
         <Button 
-            {...type}
+            type={type}
             className={`${classes}`} 
             onClick={handleClick}
             name={name}> 
-                {icon && <FontAwesomeIcon icon={icon}  />}
+                {icon && <FontAwesomeIcon icon={icon}  aria-label={type} />}
                 {text} 
         </Button>  
     );

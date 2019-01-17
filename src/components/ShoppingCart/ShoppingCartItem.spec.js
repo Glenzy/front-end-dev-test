@@ -5,22 +5,29 @@ import ShoppingCartItem from './ShoppingCartItem.jsx';
 let wrapper;
 
 const handleClick = jest.fn();
-const defaultProps = {};
+const defaultProps = {
+  productName:'Test item' ,
+  productImage:'https://www.test.com/images/img.jgp', 
+  handleClick
+};
 
 describe('shopping cart item component', ()=>{
+  it('renders correctly', () => {
+    givenShoppingCartItemWithProps(defaultProps);
+    expect(wrapper.find('.cart-item')).toHaveLength(1);
+  }); 
 
-  it('should call click handler when clicked', ()=>{
-    givenButtonWithProps(defaultProps);
-    wrapper.simulate('click');
-    expect(handleClick.mock.calls.length).toBe(1);
+  it('should display the remove from cart button', ()=>{
+    givenShoppingCartItemWithProps(defaultProps);
+    expect( wrapper.find('FontAwesomeIcon')).toHaveLength(1);
   });
 
-  /*it('renders correctly', () => {
-    givenButtonWithProps(defaultProps);
-    expect(wrapper).toMatchSnapshot();
-  }); */
+  it('should display the product image', ()=>{
+    givenShoppingCartItemWithProps(defaultProps);
+    expect( wrapper.find('img').prop('src')).toEqual('https://www.test.com/images/img.jgp');
+  });
 });
 
-const givenButtonWithProps = (defaultProps) => wrapper = shallow(
+const givenShoppingCartItemWithProps = (defaultProps) => wrapper = shallow(
   <ShoppingCartItem {...defaultProps} />
 );

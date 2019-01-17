@@ -6,12 +6,19 @@ import Button  from '../Button';
 export const Product = (props) => {
     const {productName, productImage, price, handleClick} = {...props}; 
     return (
-        <Col col="xs-12 sm-4 md-3 product">
+        <div className="xs-12 sm-6 md-3 product">
             <h5>{productName}</h5>
             <img src={`${productImage}`} alt={`${productName}`} className="img-fluid" />
             <p>${price}</p>
-            <Button text="Add to cart" name={productName} classes=" primary add-to-cart"  icon="cart-plus"  handleClick={handleClick}/>
-        </Col>
+            <Button 
+                text="Add to cart" 
+                type="Add to cart" 
+                name={productName} 
+                classes=" primary add-to-cart"  
+                icon="cart-plus"  
+                handleClick={handleClick}
+                />
+        </div>
     );
 }
 

@@ -4,7 +4,6 @@ export default {
     productsList: [
 
     {
-
         "isPublished": "true",
 
         "productName": "Apple iPhone X",
