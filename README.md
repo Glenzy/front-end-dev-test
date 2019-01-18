@@ -1,7 +1,12 @@
 #This Front-end Developer test was built using React Slingshot. 
 It was chosen because it contains all the necessary boiler plate to use Redux and Scss. 
 
-## for installation see guide below
+## for installation use npm
+1. *npm install*
+2. *npm start*
+
+
+
 <p align="center">
   <img src="https://cloud.githubusercontent.com/assets/3129129/22811426/bb69dc06-ef0c-11e6-8092-a0bea9060b35.png"/>
 </p>
