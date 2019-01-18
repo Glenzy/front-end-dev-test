@@ -1,5 +1,5 @@
 # This Front-end Developer test was built using React Slingshot. 
-It was chosen because it contains all the necessary boiler plate to use Redux and Scss. 
+React Slingshot was chosen because it contains all the necessary boiler plate to use Redux and Scss.
 
 ## For installation use npm
 1. *npm install*
