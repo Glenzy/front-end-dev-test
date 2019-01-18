@@ -1,4 +1,4 @@
-#This Front-end Developer test was built using React Slingshot. 
+# This Front-end Developer test was built using React Slingshot. 
 It was chosen because it contains all the necessary boiler plate to use Redux and Scss. 
 
 ## for installation use npm
