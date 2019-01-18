@@ -9,6 +9,7 @@ The tech stack used in this dev test is:
 * Bootstrap-scss 4.2.1
 * Posed ^4.5.0 
 * Enzyme 3.5.0
+* Sass
 
 All images were supplied by Telstra. 
 
