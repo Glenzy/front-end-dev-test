@@ -2,17 +2,18 @@
 
 This app was built using React Slingshot. Below you will find a list of their FAQ's below. 
 
-The tech stack used in this test is:
-React 16.4.2
-Redux 4.0.0
-Jest  23.5.0
-Bootstrap-scss 4.2.1
-Posed ^4.5.0 
-Enzyme 3.5.0
+The tech stack used in this dev test is:
+* React 16.4.2
+* Redux 4.0.0
+* Jest  23.5.0
+* Bootstrap-scss 4.2.1
+* Posed ^4.5.0 
+* Enzyme 3.5.0
 
 All images were supplied by Telstra. 
 
-For installation please see the read-me here: https://github.com/Glenzy/front-end-dev-test/blob/master/README.md
+For installation please see the read-me here: 
+[link]https://github.com/Glenzy/front-end-dev-test/blob/master/README.md[/link]
 
 [Why does this exist?](#why-does-this-exist)
 
