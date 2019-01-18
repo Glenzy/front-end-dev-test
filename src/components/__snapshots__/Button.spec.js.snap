@@ -33,7 +33,7 @@ ShallowWrapper {
   Symbol(enzyme.__node__): Object {
     "instance": null,
     "key": undefined,
-    "nodeType": "class",
+    "nodeType": "host",
     "props": Object {
       "children": Array [
         <FontAwesomeIcon
@@ -103,13 +103,13 @@ ShallowWrapper {
       },
       "Test Button",
     ],
-    "type": [Function],
+    "type": "button",
   },
   Symbol(enzyme.__nodes__): Array [
     Object {
       "instance": null,
       "key": undefined,
-      "nodeType": "class",
+      "nodeType": "host",
       "props": Object {
         "children": Array [
           <FontAwesomeIcon
@@ -179,7 +179,7 @@ ShallowWrapper {
         },
         "Test Button",
       ],
-      "type": [Function],
+      "type": "button",
     },
   ],
   Symbol(enzyme.__options__): Object {

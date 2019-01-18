@@ -1,7 +1,6 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
-import { Container, Row, Card, ListGroup } from 'bootstrap-4-react';
 import ShoppingCartItem from './ShoppingCartItem.jsx';
 import * as actions from '../../actions/shoppingCartActions';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
@@ -15,14 +14,16 @@ export class ShoppingCart extends Component {
 
     render() {
     const {productsList, itemsInCart, cartIsOpen} = this.props;
+    const hasItem = itemsInCart > 0  ? 'has-item' : '';
         return ( 
-        <section className={cartIsOpen ? 'shopping-cart shown' : 'shopping-cart'} name="shopping-cart">
+        <section className={cartIsOpen ? `shopping-cart shown ${hasItem}` : `shopping-cart ${hasItem} `} name="shopping-cart">
             <div className="container">
                 <div className="row">
                     <div className="card">
                         <ul className="list-group">
-                            <li className="list-group-item" onClick={this.toggleCart}>
+                            <li className="list-group-item cart-icon" onClick={this.toggleCart}>
                                 <FontAwesomeIcon icon={"shopping-cart"}  aria-label="Shopping cart"/>
+                                <h5 className="item-count">{itemsInCart > 0  ? `${itemsInCart}` : ''}</h5>
                                 <h5 className="d-none d-sm-inline-block">Shopping cart</h5>
                             </li>
                             { itemsInCart > 0 ? null : <li className="list-group-item cart-item">No items in cart</li>}

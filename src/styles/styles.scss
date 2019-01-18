@@ -1,233 +1,297 @@
-@import "../../node_modules/bootstrap/scss/bootstrap";
-
-/* Variables */
-
-$primary: #5bb7db;
-$danger: #ff0000;
-$cartWidth: 200px;
-$fullWidth:100%;
-
-/* Styles */
-
-body {
-    font: 14px 'Helvetica Neue', Helvetica, Arial, sans-serif;
-    line-height: 1.4em;
-    color: #4d4d4d;
-    min-width: 320px;
-    max-width: 100%;
-    margin: 0 auto;
-    -webkit-font-smoothing: antialiased;
-    -moz-font-smoothing: antialiased;
-    font-smoothing: antialiased;
-    font-weight: 300;
-}
-
-h2 {
-    color: $primary;
-}
-
-.wrapper {
-    position: relative;
-}
-
-section {
-    display: inline-block;
-    position: relative;
-    &.product-list {
-        width: calc(100% - #{$cartWidth});
+    @import "../../node_modules/bootstrap-scss/bootstrap.scss";
+    /* Variables */
+    
+    $primary: #5bb7db;
+    $danger: #ff0000;
+    $cartWidth: 200px;
+    $fullWidth:100%;
+    /* Styles */
+    
+    body {
+        font: 14px 'Helvetica Neue', Helvetica, Arial, sans-serif;
+        line-height: 1.4em;
+        color: #4d4d4d;
+        min-width: 320px;
+        max-width: 100%;
+        margin: 0 auto;
+        -webkit-font-smoothing: antialiased;
+        -moz-font-smoothing: antialiased;
+        font-smoothing: antialiased;
+        font-weight: 300;
     }
-    &.shopping-cart {
-        width: $cartWidth;
+    
+    h2 {
+        color: $primary;
     }
-    @media(max-width: 576px) {
-        &.product-list,
-        &.shopping-cart {
-            width: 100%;
-        }
-    }
-}
-
-.header-background {
-    @media(min-width: 768px) {
-        background: #000 url(https://www.telstra.com.au/content/dam/tcom/personal/iphone-xr-takeover-banner-desktop-v2-menu.jpg) no-repeat;
-        background-size: 2560px 426px;
-        height: 426px;
-        background-position: center top;
-    }
-    @media(max-width: 767px) {
-        background: #000 url(https://www.telstra.com.au/content/dam/tcom/personal/home-page/images-c/pre-order-now-iphone-xr-takeover-mobile-768x460.png) no-repeat;
-        background-size: 768px 460px;
-        height: 460px;
-        background-position: center top;
-    }
-    h1 {
-        margin-top: 45px;
-        color: #dc4cc7;
-        span {
-            position: relative;
-            &:before {
-                content: attr(data-letters);
-                position: absolute;
-                color: #17a8db;
-                left: 0px;
-                z-index: 3;
-                overflow: hidden;
-                white-space: nowrap;
-                width: 0%;
-                animation-duration: 3s;
-                animation-name: slidein;
-                -webkit-transition: width 0.3s;
-                transition: width 0.3s;
-                animation-iteration-count: 2;
-                animation-direction: alternate;
-                -webkit-transition-timing-function: cubic-bezier(0.7, 0, 0.3, 1);
-                transition-timing-function: cubic-bezier(0.7, 0, 0.3, 1);
-            }
-        }
-    }
-    h4 {
-        color: #fff;
-    }
-}
-
-.col-product {
-    border-radius: 0.8rem;
-    margin: 5px;
-    box-shadow: 0px 0px 5px 0px rgba(0, 0, 0, 0.75);
-    text-align: center;
-    min-width: 200px;
-    img {
+    
+    .wrapper {
+        position: relative;
         display: block;
         margin: 0 auto;
-    }
-    h5 {
-        margin: 25px auto;
-    }
-    p {
-        font-size: 20px;
-        font-weight: 700;
-        margin: 20px auto;
-    }
-    @media (min-width: 576px) {
-        &.col-sm-6 {
-            -ms-flex: 0 0 100%;
-            flex: 0 0 100%;
-            max-width: 95%;
+        max-width: 90%;
+        @media(max-width: 767px) {
+            max-width: 100%;
+            overflow-x: hidden;
+            min-height: 100vh;
         }
     }
-    @media (min-width: 620px) {
-        &.col-sm-6 {
-            -ms-flex: 0 0 47%;
-            flex: 0 0 47%;
-            max-width: 47%;
+    
+    section {
+        display: inline-block;
+        &.product-list {
+            width: calc(100% - #{$cartWidth});
         }
-    }
-    @media (min-width: 768px) {
-        &.col-md-3 {
-            -ms-flex: 0 0 23%;
-            flex: 0 0 23%;
-            max-width: 23%;
+        &.shopping-cart {
+            width: $cartWidth;
         }
-    }
-}
-
-button.add-to-cart {
-    background-color: #1964c8;
-    transition: all 0.3s ease-in-out;
-    display: block;
-    margin: 20px auto;
-    color: #fff;
-    &:hover {
-        background: #00aaf3;
-    }
-    .fa-cart-plus {
-        margin-right: 5px;
-    }
-}
-
-.shopping-cart {
-    .card {
-        width: 90%;
-        border: 0;
-        .list-group {
-            border: 0;
-        }
-        .list-group-item {
-            &:first-child {
-                border: 1px solid rgba(0, 0, 0, .125);
+        @media(max-width: 576px) {
+            &.product-list,
+            &.shopping-cart {
+                width: 100%;
             }
         }
     }
-    .cart-item {
-        padding: 10px;
+    
+    .header-background {
         position: relative;
-    }
-    col {
-        text-align: center;
-    }
-    img {
-        max-width: 20%;
-        display: inline-block;
-    }
-    h5 {
-        display: inline-block;
-        max-width: 80%;
-        vertical-align: middle;
-        font-size: 1rem;
-        margin-left: 5px;
-    }
-    h6 {
-        display: inline-block;
-        max-width: 65%;
-        vertical-align: middle;
-        font-size: 0.9rem;
-        margin-left: 5px;
-    }
-    .fa-minus-circle {
-        color: #ff5200;
-        cursor: pointer;
-        transition: all 0.3s ease-in-out;
-        font-size: 17px;
-        position: absolute;
-        right: 5px;
-        top: 36%;
-        transform: rotateY(-50%);
-        &:hover {
-            color: red;
+        @media(min-width: 768px) {
+            background: #000 url(https://www.telstra.com.au/content/dam/tcom/personal/iphone-xr-takeover-banner-desktop-v2-menu.jpg) no-repeat;
+            background-size: 2560px 426px;
+            height: 426px;
+            background-position: center top;
+        }
+        @media(max-width: 767px) {
+            background: #000 url(https://www.telstra.com.au/content/dam/tcom/personal/home-page/images-c/pre-order-now-iphone-xr-takeover-mobile-768x460.png) no-repeat;
+            background-size: 768px 460px;
+            height: 460px;
+            background-position: center top;
+        }
+        h1 {
+            margin-top: 45px;
+            color: #dc4cc7;
+            span {
+                position: relative;
+                &:before {
+                    content: attr(data-letters);
+                    position: absolute;
+                    color: #17a8db;
+                    left: 0px;
+                    z-index: 3;
+                    overflow: hidden;
+                    white-space: nowrap;
+                    width: 0%;
+                    animation-duration: 5s;
+                    animation-name: slidein;
+                    -webkit-transition: width 0.3s;
+                    transition: width 0.3s;
+                    animation-iteration-count: infinite;
+                    animation-direction: alternate;
+                    -webkit-transition-timing-function: cubic-bezier(0.7, 0, 0.3, 1);
+                    transition-timing-function: cubic-bezier(0.7, 0, 0.3, 1);
+                }
+            }
+        }
+        h4 {
+            color: #fff;
+        }
+        @media(max-width: 767px) {
+            .mobile-title-bg {
+                position: absolute;
+                /* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#000000+0,000000+100&0+0,0.9+100 */
+                background: -moz-linear-gradient(top, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0.9) 100%);
+                /* FF3.6-15 */
+                background: -webkit-linear-gradient(top, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0.9) 100%);
+                /* Chrome10-25,Safari5.1-6 */
+                background: linear-gradient(to bottom, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0.9) 100%);
+                /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+                //filter: progid: DXImageTransform.Microsoft.gradient( startColorstr='#00000000', endColorstr='#e6000000', GradientType=0);
+                /* IE6-9 */
+                bottom: 0;
+                width: 100%;
+                padding: 20px 0;
+                left: 0;
+            }
+            h1,
+            h4 {
+                text-align: center;
+            }
+            @media(max-width: 480px) {
+                h1 {
+                    font-size: 13vw;
+                }
+                h4 {
+                    font-size: 5vw;
+                }
+            }
         }
     }
-    @media(max-width: 576px) {
-        position: fixed;
-        top: 10px;
-        transform: translateX(-14%);
-        background: #fff;
-        transition: all 0.2s ease-in-out;
-        cursor: pointer;
+    
+    .col-product {
+        border-radius: 0.8rem;
+        margin: 5px;
+        box-shadow: 0px 0px 5px 0px rgba(0, 0, 0, 0.75);
+        text-align: center;
+        min-width: 200px;
+        padding: 15px;
+        img {
+            display: block;
+            margin: 0 auto;
+        }
+        h5 {
+            margin: 25px auto;
+        }
+        p {
+            font-size: 20px;
+            font-weight: 700;
+            margin: 20px auto;
+        }
+        @media (min-width: 576px) {
+            &.col-sm-6 {
+                -ms-flex: 0 0 100%;
+                flex: 0 0 100%;
+                max-width: 95%;
+            }
+        }
+        @media (min-width: 620px) {
+            &.col-sm-6 {
+                -ms-flex: 0 0 47%;
+                flex: 0 0 47%;
+                max-width: 47%;
+            }
+        }
+        @media (min-width: 768px) {
+            &.col-md-3 {
+                -ms-flex: 0 0 23%;
+                flex: 0 0 23%;
+                max-width: 23%;
+            }
+        }
+        @media(max-width: 767px) {
+            img {
+                max-width: 65%;
+            }
+        }
+    }
+    
+    button.add-to-cart {
+        background-color: #1964c8;
+        transition: all 0.3s ease-in-out;
+        display: block;
+        margin: 20px auto;
+        color: #fff;
+        &:hover {
+            background: #00aaf3;
+        }
+        .fa-cart-plus {
+            margin-right: 5px;
+        }
+    }
+    
+    .shopping-cart {
         .card {
+            width: 90%;
+            border: 0;
+            .list-group {
+                border: 0;
+            }
             .list-group-item {
-                opacity: 0;
-                width: 60%;
-                transition: opacity 0.3s ease-in-out;
-                &:first-child {
+                &.cart-icon {
+                    color: #fff;
+                    background-color: #00aaf3;
+                    border: 1px solid rgba(0, 0, 0, .125);
+                    border-bottom: 2px;
+                    border-radius: 0.25rem;
+                }
+            }
+        }
+        .item-count {
+            display: none;
+        }
+        .cart-item {
+            padding: 10px;
+            position: relative;
+        }
+        col {
+            text-align: center;
+        }
+        img {
+            max-width: 20%;
+            display: inline-block;
+        }
+        h5 {
+            display: inline-block;
+            max-width: 80%;
+            vertical-align: middle;
+            font-size: 1rem;
+            margin-left: 5px;
+        }
+        h6 {
+            display: inline-block;
+            max-width: 65%;
+            vertical-align: middle;
+            font-size: 0.9rem;
+            margin-left: 5px;
+        }
+        .fa-minus-circle {
+            color: #ff5200;
+            cursor: pointer;
+            transition: all 0.3s ease-in-out;
+            font-size: 17px;
+            position: absolute;
+            right: 5px;
+            top: 36%;
+            transform: rotateY(-50%);
+            &:hover {
+                color: red;
+            }
+        }
+        @media(max-width: 576px) {
+            opacity: 0;
+            position: fixed;
+            top: 15px;
+            transform: translateX(-21%);
+            background: #fff;
+            transition: all 0.2s ease-in-out;
+            background-color: transparent;
+            .item-count {
+                display: inline-block;
+            }
+            cursor: pointer;
+            .card {
+                background-color: transparent;
+                .list-group-item {
+                    opacity: 0;
+                    width: 60%;
+                    transition: opacity 0.3s ease-in-out;
+                    &.cart-icon {
+                        opacity: 1;
+                    }
+                    &.cart-item {}
+                }
+            }
+            &.has-item {
+                opacity: 1;
+            }
+            &.shown {
+                transform: translateX(-61%);
+                .cart-item {
                     opacity: 1;
                 }
             }
         }
-        &.shown {
-            transform: translateX(-61%);
-            .cart-item {
-                opacity: 1;
-            }
+    }
+    
+    @keyframes slidein {
+        0% {
+            width: 0%
+        }
+        10% {
+            width: 0%
+        }
+        90% {
+            width: 100%
+        }
+        100% {
+            width: 100%
         }
     }
-}
-
-@keyframes slidein {
-    from {
-        width: 0%;
-    }
-    to {
-        margin-left: 0%;
-        width: 100%;
-    }
-}

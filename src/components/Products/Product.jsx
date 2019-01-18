@@ -1,12 +1,11 @@
 import React from 'react';
 import { productPropTypes } from '../../types/productPropTypes';
-import { Col } from 'bootstrap-4-react';
 import Button  from '../Button';
 
 export const Product = (props) => {
-    const {productName, productImage, price, handleClick} = {...props}; 
+    const {productName, productImage, price, handleClick, key} = {...props}; 
     return (
-        <div className="xs-12 sm-6 md-3 product">
+        <div key={key}>
             <h5>{productName}</h5>
             <img src={`${productImage}`} alt={`${productName}`} className="img-fluid" />
             <p>${price}</p>
@@ -14,7 +13,7 @@ export const Product = (props) => {
                 text="Add to cart" 
                 type="Add to cart" 
                 name={productName} 
-                classes=" primary add-to-cart"  
+                classes=" btn btn-primary add-to-cart"  
                 icon="cart-plus"  
                 handleClick={handleClick}
                 />

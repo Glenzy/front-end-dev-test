@@ -12,10 +12,12 @@ library.add(faCartPlus,  faShoppingCart, faMinusCircle);
 class App extends React.Component {
   render() {
     return (
-      <div className="wrapper">
-          <Header />
-          <ProductPage />
-          <ShoppingCart />
+      <div>
+        <Header />
+        <div className="wrapper">    
+            <ProductPage />
+            <ShoppingCart />
+        </div>
       </div>
     );
   }

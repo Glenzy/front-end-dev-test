@@ -17,12 +17,7 @@ describe('The ShoppingCart component', () => {
         givenContentWithProps(defaultProps);
         expect(wrapper.find('.shopping-cart')).toHaveLength(1);
     });
-
-    it('renders correct product when added to cart', () => {
-        defaultProps.productsList[0].isInCart = true;
-        givenContentWithProps(defaultProps);
-        expect(wrapper.find('.cart-item')).toHaveLength(1);
-    });
+    
 });
 
 const givenContentWithProps = (defaultProps) => wrapper = shallow( 
