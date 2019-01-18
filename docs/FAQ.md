@@ -1,8 +1,24 @@
 # FAQ
 
+This app was built using React Slingshot. Below you will find a list of their FAQ's below. 
+
+The tech stack used in this test is:
+React 16.4.2
+Redux 4.0.0
+Jest  23.5.0
+Bootstrap-scss 4.2.1
+Posed ^4.5.0 
+Enzyme 3.5.0
+
+All images were supplied by Telstra. 
+
+For installation
+
 [Why does this exist?](#why-does-this-exist)
 
+
 [What do the scripts in package.json do?](#what-do-the-scripts-in-packagejson-do)
+  
 
 [Can you explain the folder structure?](#can-you-explain-the-folder-structure)
 

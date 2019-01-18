@@ -2,8 +2,9 @@ import React, { Component } from 'react';
 import {connect} from 'react-redux';
 import {bindActionCreators} from 'redux';
 import posed, { PoseGroup } from 'react-pose';
-import * as actions from '../../actions/productActions';
+import * as actions from '../../actions/cartActions';
 import Product from './Product.jsx';
+
 const FadeInProducts = posed.div({
     show: {
         delayChildren: 400,
@@ -52,7 +53,10 @@ export class ProductPage extends Component {
 }
 
 function mapStateToProps(state) {
-  return {productsList: state.products.productsList}
+  return {
+      productsList: state.products.productsList,
+      itemsInCart: state.products.itemsInCart
+    }
 }
 
 function mapDispatchToProps(dispatch) {

@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
 import ShoppingCartItem from './ShoppingCartItem.jsx';
-import * as actions from '../../actions/shoppingCartActions';
+import * as actions from '../../actions/cartActions';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 
 export class ShoppingCart extends Component {
