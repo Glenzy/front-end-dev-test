@@ -3,9 +3,9 @@ import { productPropTypes } from '../../types/productPropTypes';
 import Button  from '../Button';
 
 export const Product = (props) => {
-    const {productName, productImage, price, handleClick, key} = {...props}; 
+    const {productName, productImage, price, handleClick} = {...props}; 
     return (
-        <div key={key}>
+        <div>
             <h5>{productName}</h5>
             <img src={`${productImage}`} alt={`${productName}`} className="img-fluid" />
             <p>${price}</p>
