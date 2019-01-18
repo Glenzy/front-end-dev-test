@@ -12,7 +12,7 @@ Enzyme 3.5.0
 
 All images were supplied by Telstra. 
 
-For installation
+For installation please see the read-me here: https://github.com/Glenzy/front-end-dev-test/blob/master/README.md
 
 [Why does this exist?](#why-does-this-exist)
 
