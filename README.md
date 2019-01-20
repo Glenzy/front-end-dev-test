@@ -1,5 +1,5 @@
-# This Front-end Developer test was built using React Slingshot. 
-React Slingshot was chosen because it contains all the necessary boiler plate to use Redux and Scss. This is a very basic shopping cart example of a responsive React/Redux app. 
+# Front-end Developer Test 
+This repo contains a front-end developer job test for Telstra. React Slingshot was chosen because it contains all the necessary boiler plate to use Redux and Scss. This is a very basic shopping cart example of a responsive React/Redux app. 
 
 * This app is WCAG2.1 AA Compliant
 * Fully responsive on all devices
@@ -22,11 +22,11 @@ React Slingshot was chosen because it contains all the necessary boiler plate to
 These were all chosen because these are what I'm most comfortable using. As stated above this particular React app bootstrap comes with all the necessary boiler plate code for Redux and even React Dom router, which makes things easy. Testing was done using Enzyme and Jest. 
 
 ## For installation use npm
-1. *npm install*
-2. *npm start*
+1.  `npm start install`
+2.  `npm start`
 
 ## For testing
-1. jest test
+1.  `jest test`
 
 For any issues regarding installation please read more below with regards to installtion and problem solving. 
 
