@@ -55,7 +55,7 @@ export class ProductPage extends Component {
                                 }
                             })}
                         </PoseGroup>
-                        <div className="col-xs-12">
+                        <div className="col">
                             {getProductsInCart.length >= getOnlyPublishedProducts.length ? (
                             <MessageBlock 
                                 styleClass="no-products"
