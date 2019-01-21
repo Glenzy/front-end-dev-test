@@ -4,6 +4,7 @@ import {bindActionCreators} from 'redux';
 import posed, { PoseGroup } from 'react-pose';
 import * as actions from '../../actions/cartActions';
 import Product from './Product.jsx';
+import MessageBlock from '../MessageBlock.jsx'
 
 const FadeInProducts = posed.div({
     show: {
@@ -26,8 +27,17 @@ export class ProductPage extends Component {
     handleClick = (event) => {
        return this.props.actions.addToCart(event.target.name);
     }
+    filterProductList = (arr, criteria) => {
+    return arr.filter(function(obj) {
+        return Object.keys(criteria).every(function(c) {
+        return obj[c] == criteria[c];
+        });
+    });
+    }
     render(){
         const productsList = this.props.productsList;
+        const getProductsInCart = this.filterProductList(productsList, {isPublished: "true", inCart: true});
+        const getOnlyPublishedProducts = this.filterProductList(productsList, {isPublished: "true"});
         return (
             <section className="product-list">
                 <div className="container-fluid">
@@ -45,6 +55,13 @@ export class ProductPage extends Component {
                                 }
                             })}
                         </PoseGroup>
+                        <div className="col-xs-12">
+                            {getProductsInCart.length >= getOnlyPublishedProducts.length ? (
+                            <MessageBlock 
+                                styleClass="no-products"
+                                message="Sorry, looks like we've run out of stock!"/>): 
+                           ( null)}
+                        </div>
                     </div>
                 </div>
             </section>
