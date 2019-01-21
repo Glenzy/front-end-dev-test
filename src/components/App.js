@@ -6,6 +6,7 @@ import { library } from '@fortawesome/fontawesome-svg-core';
 import { faCartPlus, faShoppingCart, faMinusCircle  } from '@fortawesome/free-solid-svg-icons';
 import ProductPage from './Products/ProductPage.jsx';
 import ShoppingCart from './ShoppingCart/ShoppingCart.jsx'
+import FilterProducts from './FilterSelection/FilterProducts.jsx'
 import Header from './Header/Header.jsx';
 
 library.add(faCartPlus,  faShoppingCart, faMinusCircle);
@@ -14,7 +15,8 @@ class App extends React.Component {
     return (
       <div>
         <Header />
-        <div className="wrapper">    
+        <div className="wrapper">   
+            <FilterProducts /> 
             <ProductPage />
             <ShoppingCart />
         </div>

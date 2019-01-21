@@ -11,7 +11,8 @@ const cartReducer = (state = initialState, action) => {
               if(product.productName === action.productName){
                 return {
                   ...product,
-                inCart:true
+                inCart:true,
+                show:false,
                 };
               }  else {
                 return product;
@@ -28,7 +29,8 @@ const cartReducer = (state = initialState, action) => {
             if(product.productName === action.productName){
               return {
                 ...product,
-              inCart:false
+              inCart:false,
+              show:true,
               };
             }  else {
               return product;
@@ -40,7 +42,38 @@ const cartReducer = (state = initialState, action) => {
       return {
         ...state,
         cartIsOpen: !state.cartIsOpen
-      }
+      };
+      case 'FILTER_BRANDS':
+      return {
+        ...state,
+        productsList:[
+          ...state.productsList.map((product) => {
+            if(product.brand === action.brand){
+              return {
+                ...product,
+              show:true
+              };
+            }  else {
+              return {
+                  ...product,
+                show:false
+                };
+            }
+          })
+        ]
+      };
+      case 'SHOW_ALL_BRANDS':
+      return {
+        ...state,
+        productsList:[
+          ...state.productsList.map((product) => {
+              return {
+                ...product,
+              show:true
+              };
+          })
+        ]
+      };
     default:
       return state;
     }
