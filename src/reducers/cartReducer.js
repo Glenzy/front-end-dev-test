@@ -5,10 +5,7 @@ const cartReducer = (state = initialState, action) => {
         case 'ADD_TO_CART':
         return {
           ...state,
-          itemsInCart:{
-            ...state.itemsInCart,
-            itemsInCart: state.itemsInCart+1
-          },
+          itemsInCart:state.itemsInCart+1,
           productsList:[
             ...state.productsList.map((product) => {
               if(product.productName === action.productName){
@@ -25,10 +22,7 @@ const cartReducer = (state = initialState, action) => {
       case 'REMOVE_FROM_CART':
       return {
         ...state,
-        itemsInCart:{
-          ...state.itemsInCart,
-          itemsInCart: state.itemsInCart+1
-        },
+        itemsInCart:state.itemsInCart-1,
         productsList:[
           ...state.productsList.map((product) => {
             if(product.productName === action.productName){
