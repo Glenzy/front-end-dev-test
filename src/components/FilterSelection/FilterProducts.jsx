@@ -3,6 +3,7 @@ import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
 import * as actions from '../../actions/filterActions';
 import Button from '../Button'
+import { filterProductsPropTypes } from '../../types/filterPropTypes'
 
 export class FilterProducts extends Component {
     handleClick = (event) => {
@@ -53,6 +54,10 @@ export class FilterProducts extends Component {
 
         );
     }
+}
+
+FilterProducts.propTypes = {
+    ...filterProductsPropTypes,
 }
 
 function mapStateToProps(state) {

@@ -56,6 +56,7 @@ ShallowWrapper {
           transform={null}
         />,
         "Test Button",
+        false,
       ],
       "className": "test test-btn",
       "name": "Test Button",
@@ -102,6 +103,7 @@ ShallowWrapper {
         "type": [Function],
       },
       "Test Button",
+      false,
     ],
     "type": "button",
   },
@@ -132,6 +134,7 @@ ShallowWrapper {
             transform={null}
           />,
           "Test Button",
+          false,
         ],
         "className": "test test-btn",
         "name": "Test Button",
@@ -178,6 +181,7 @@ ShallowWrapper {
           "type": [Function],
         },
         "Test Button",
+        false,
       ],
       "type": "button",
     },
