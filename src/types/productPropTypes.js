@@ -24,7 +24,7 @@ export const productPagePropTypes = {
     show: bool.isRequired,
   }).isRequired,
   actions:shape({
-    showAllBrands: func.isRequired,
+    handleClick: func.isRequired,
     filterBrands: func.isRequired,
   }).isRequired
 };
