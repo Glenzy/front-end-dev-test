@@ -3,7 +3,6 @@ import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
 import * as actions from '../../actions/filterActions';
 import Button from '../Button'
-import { filterProductsPropTypes } from '../../types/filterPropTypes'
 
 export class FilterProducts extends Component {
     handleClick = (event) => {
@@ -27,25 +26,27 @@ export class FilterProducts extends Component {
         <section className="filter-buttons">
             <div className="container-fluid">
                 <div className="row">
-                    <div className="col-xs-12 col-md-3 col-lg-2">
+                    <div className="col-xs-12 col-md-3 col-lg-2 brand-filter">
                         <Button 
-                            text="Show All Brands"
-                            classes="btn brand-filter"
+                            text="Show All"
+                            classes="btn "
                             type="Brand filter"
-                            name="Show All Brands"
+                            name="Show All"
                             handleClick={this.handleClick} 
                         />
+                            <hr className="hr-hover-effect" />
                         </div>
                     {productBrands.map((brand, index)=>{
                         return (
-                        <div key={index} className="col-xs-12 col-md-3 col-lg-2">
+                        <div key={index} className="col-xs-12 col-md-3 col-lg-2 brand-filter">
                             <Button
                             text={brand} 
                             handleClick={this.handleClick} 
                             type="Brand filter"
-                            classes="btn brand-filter"
+                            classes="btn"
                             name={brand}
                             />
+                            <hr className="hr-hover-effect" />
                         </div>);
                     })}
                 </div>
@@ -54,10 +55,6 @@ export class FilterProducts extends Component {
 
         );
     }
-}
-
-FilterProducts.propTypes = {
-    ...filterProductsPropTypes,
 }
 
 function mapStateToProps(state) {

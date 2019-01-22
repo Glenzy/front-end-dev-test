@@ -14,13 +14,28 @@
         }
     }
     .brand-filter {
-        min-width: 100%;;
-        transition: all 0.3s ease-in-out;
-        background: none;
-        border:0;
-        font-weight: 500;
+        button {
+            min-width: 100%;;
+            transition: all 0.3s ease-in-out;
+            background: none;
+            border:0;
+            font-weight: 500;
+            color:$telstraBlue;
+            font-weight:700;
+        }
+        .hr-hover-effect {
+            width: 0;
+            display: block;
+            margin:0 auto;
+            transition: all 0.3s ease-in-out;
+        }
         &:hover {
-            box-shadow: 0px 2px 8px 0px rgba(0,0,0,0.32);
+           button{ color:$telstraBlueHover;}
+           .hr-hover-effect {width:50%;}
+        }
+        &.active {
+            button{ color:$telstraBlueHover;}
+            .hr-hover-effect {width:50%;}
         }
     }
 }

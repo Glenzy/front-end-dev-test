@@ -1,14 +1,17 @@
-    @import "../../node_modules/bootstrap-scss/bootstrap.scss";
-    @import "./header.scss";
-    @import "./cart.scss";
-    @import "./products.scss";
-    @import "./filter.scss";
     /* Variables */
     
-    $primary: #5bb7db;
+    $telstraBlue: #1964c8;
+    $telstraBlueHover: #00aaf3;
     $danger: #ff0000;
     $cartWidth: 200px;
     $fullWidth:100%;
+
+@import "../../node_modules/bootstrap-scss/bootstrap.scss";
+@import "./header.scss";
+@import "./cart.scss";
+@import "./products.scss";
+@import "./filter.scss";
+
     /* Styles */
     
     body {

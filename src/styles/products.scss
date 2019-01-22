@@ -36,13 +36,13 @@
 }
 
 button.add-to-cart {
-    background-color: #1964c8;
+    background-color:$telstraBlue;
     transition: all 0.3s ease-in-out;
     display: block;
     margin: 20px auto;
     color: #fff;
     &:hover {
-        background: #00aaf3;
+        background:$telstraBlueHover;
     }
     .fa-cart-plus {
         margin-right: 5px;
