@@ -41,10 +41,10 @@ export class ProductPage extends Component {
         return (
             <section className="product-list">
                 <div className="container-fluid">
-                    <div className="row row-eq-height">
+                    <div className="row row-eq-height justify-content-around">
                         <PoseGroup>
                             {productsList.map((product, index)=>{
-                                if(product.isPublished === "true" && !product.inCart){
+                                if(product.isPublished === "true" && product.show ){
                                     return (
                                         <FadeInProducts  key={index} className="col-product col-xs-12 col-sm-6 col-md-3">
                                             <Product  key={index} id={index} {...product} handleClick={this.handleClick} />

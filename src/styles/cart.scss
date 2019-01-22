@@ -1,0 +1,94 @@
+.shopping-cart {
+    .card {
+        width: 90%;
+        border: 0;
+        .list-group {
+            border: 0;
+        }
+        .list-group-item {
+            &.cart-icon {
+                color: #fff;
+                background-color: #007bff;
+                border: 1px solid rgba(0, 0, 0, .125);
+                border-bottom: 2px;
+                border-radius: 0.25rem;
+            }
+        }
+    }
+    .item-count {
+        display: none;
+    }
+    .cart-item {
+        padding: 10px;
+        position: relative;
+    }
+    col {
+        text-align: center;
+    }
+    img {
+        max-width: 20%;
+        display: inline-block;
+    }
+    h5 {
+        display: inline-block;
+        max-width: 80%;
+        vertical-align: middle;
+        font-size: 1rem;
+        margin-left: 5px;
+    }
+    h6 {
+        display: inline-block;
+        max-width: 65%;
+        vertical-align: middle;
+        font-size: 0.9rem;
+        margin-left: 5px;
+    }
+    .fa-minus-circle {
+        color: #ff5200;
+        cursor: pointer;
+        transition: all 0.3s ease-in-out;
+        font-size: 17px;
+        position: absolute;
+        right: 5px;
+        top: 36%;
+        transform: rotateY(-50%);
+        &:hover {
+            color: red;
+        }
+    }
+    @media(max-width: 576px) {
+        z-index: 4;
+        opacity: 0;
+        position: fixed;
+        top: 15px;
+        transform: translateX(-21%);
+        background: #fff;
+        transition: all 0.2s ease-in-out;
+        background-color: transparent;
+        .item-count {
+            display: inline-block;
+        }
+        cursor: pointer;
+        .card {
+            background-color: transparent;
+            .list-group-item {
+                opacity: 0;
+                width: 60%;
+                transition: opacity 0.3s ease-in-out;
+                &.cart-icon {
+                    opacity: 1;
+                }
+                &.cart-item {}
+            }
+        }
+        &.has-item {
+            opacity: 1;
+        }
+        &.shown {
+            transform: translateX(-61%);
+            .cart-item {
+                opacity: 1;
+            }
+        }
+    }
+}

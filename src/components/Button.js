@@ -11,7 +11,8 @@ const button = (props) => {
             onClick={handleClick}
             name={name}> 
                 {icon && <FontAwesomeIcon icon={icon}  aria-label={type} />}
-                {text} 
+                {text}
+            {type === "nav-link" && <span className="sr-only">(current)</span>} 
         </button>  
     );
 }

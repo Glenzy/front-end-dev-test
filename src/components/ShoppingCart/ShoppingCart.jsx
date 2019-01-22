@@ -23,7 +23,7 @@ export class ShoppingCart extends Component {
                         <ul className="list-group">
                             <li className="list-group-item cart-icon" onClick={this.toggleCart}>
                                 <FontAwesomeIcon icon={"shopping-cart"}  aria-label="Shopping cart"/>
-                                <h5 className="item-count">{itemsInCart > 0  ? `${itemsInCart}` : ''}</h5>
+                                <p className="item-count">{itemsInCart > 0  ? `${itemsInCart}` : ''}</p>
                                 <h5 className="d-none d-sm-inline-block">Shopping cart</h5>
                             </li>
                             { itemsInCart > 0 ? null : <li className="list-group-item cart-item">No items in cart</li>}
