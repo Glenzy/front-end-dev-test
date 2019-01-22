@@ -38,7 +38,7 @@ export class FilterProducts extends Component {
                         </div>
                     {productBrands.map((brand, index)=>{
                         return (
-                        <div key={index} className="col-xs-12 col-md-3 col-lg-1">
+                        <div key={index} className="col-xs-12 col-md-3 col-lg-2">
                             <Button
                             text={brand} 
                             handleClick={this.handleClick} 
