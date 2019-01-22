@@ -23,11 +23,17 @@ This repo contains a front-end developer job test for Telstra. React Slingshot w
 These were all chosen because these are what I'm most comfortable using. As stated above this particular React app bootstrap comes with all the necessary boiler plate code for Redux and even React Dom router, which makes things easy. Testing was done using Enzyme and Jest. 
 
 ## For installation use npm
-1.  `npm start install`
+1.  `npm install`
 2.  `npm start`
 
 ## For testing
 1.  `jest test`
 
+
+## Errors
+
+If there is any issues with starting the app try installing and starting it again. 
+
+1. `npm install`
 ----
 
