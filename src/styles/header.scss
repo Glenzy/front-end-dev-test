@@ -1,0 +1,87 @@
+.header-background {
+    position: relative;
+    @media(min-width: 768px) {
+        background: #000 url(https://www.telstra.com.au/content/dam/tcom/personal/iphone-xr-takeover-banner-desktop-v2-menu.jpg) no-repeat;
+        background-size: 2560px 426px;
+        height: 426px;
+        background-position: center top;
+    }
+    @media(max-width: 767px) {
+        background: #000 url(https://www.telstra.com.au/content/dam/tcom/personal/home-page/images-c/pre-order-now-iphone-xr-takeover-mobile-768x460.png) no-repeat;
+        background-size: 768px 460px;
+        height: 460px;
+        background-position: center top;
+    }
+    h1 {
+        margin-top: 45px;
+        color: #dc4cc7;
+        span {
+            position: relative;
+            &:before {
+                content: attr(data-letters);
+                position: absolute;
+                color: #17a8db;
+                left: 0px;
+                z-index: 3;
+                overflow: hidden;
+                white-space: nowrap;
+                width: 0%;
+                animation-duration: 5s;
+                animation-name: slidein;
+                -webkit-transition: width 0.3s;
+                transition: width 0.3s;
+                animation-iteration-count: infinite;
+                animation-direction: alternate;
+                -webkit-transition-timing-function: cubic-bezier(0.7, 0, 0.3, 1);
+                transition-timing-function: cubic-bezier(0.7, 0, 0.3, 1);
+            }
+        }
+    }
+    h4 {
+        color: #fff;
+    }
+    @media(max-width: 767px) {
+        .mobile-title-bg {
+            position: absolute;
+            /* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#000000+0,000000+100&0+0,0.9+100 */
+            background: -moz-linear-gradient(top, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0.9) 100%);
+            /* FF3.6-15 */
+            background: -webkit-linear-gradient(top, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0.9) 100%);
+            /* Chrome10-25,Safari5.1-6 */
+            background: linear-gradient(to bottom, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0.9) 100%);
+            /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+            //filter: progid: DXImageTransform.Microsoft.gradient( startColorstr='#00000000', endColorstr='#e6000000', GradientType=0);
+            /* IE6-9 */
+            bottom: 0;
+            width: 100%;
+            padding: 20px 0;
+            left: 0;
+        }
+        h1,
+        h4 {
+            text-align: center;
+        }
+        @media(max-width: 480px) {
+            h1 {
+                font-size: 13vw;
+            }
+            h4 {
+                font-size: 5vw;
+            }
+        }
+    }
+}
+@keyframes slidein {
+    0% {
+        width: 0%
+    }
+    10% {
+        width: 0%
+    }
+    90% {
+        width: 100%
+    }
+    100% {
+        width: 100%
+    }
+}

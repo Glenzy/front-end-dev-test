@@ -23,28 +23,30 @@ export class FilterProducts extends Component {
     const {productsList} = this.props;
     const productBrands = this. removeDuplicates(productsList);
         return ( 
-        <section>
-            <div className="container">
+        <section className="filter-buttons">
+            <div className="container-fluid">
                 <div className="row">
-                    <div className="col">
+                    <div className="col-xs-12 col-md-3 col-lg-2">
                         <Button 
                             text="Show All Brands"
-                            classes="brand-filter"
+                            classes="btn brand-filter"
                             type="Brand filter"
                             name="Show All Brands"
                             handleClick={this.handleClick} 
                         />
-                        {productBrands.map((brand, index)=>{
-                            return <Button
-                            key={index}
+                        </div>
+                    {productBrands.map((brand, index)=>{
+                        return (
+                        <div key={index} className="col-xs-12 col-md-3 col-lg-1">
+                            <Button
                             text={brand} 
                             handleClick={this.handleClick} 
                             type="Brand filter"
-                            classes="brand-filter"
+                            classes="btn brand-filter"
                             name={brand}
                             />
-                        })}
-                    </div>
+                        </div>);
+                    })}
                 </div>
             </div> 
         </section>
