@@ -7,21 +7,8 @@ import Product from './Product.jsx';
 import MessageBlock from '../MessageBlock.jsx'
 
 const FadeInProducts = posed.div({
-    show: {
-        delayChildren: 400,
-        staggerChildren: 250,
-        opacity:1,
-        x:0,
-        delay:600,
-    },
-    hide:{
-        delay:600,
-        delayChildren: 100,
-        staggerChildren: 250,
-        opacity:0,
-        transition: { duration: 1500 },
-        x:100,
-    }
+    enter: { x: 0, y:0, opacity: 1 },
+    exit: { x: 450, y:-50, opacity: 0, transition: { duration: 200 } }
   });
 export class ProductPage extends Component {
     handleClick = (event) => {
@@ -41,12 +28,12 @@ export class ProductPage extends Component {
         return (
             <section className="product-list">
                 <div className="container-fluid">
-                    <div className="row row-eq-height justify-content-around">
+                    <div className="row row-eq-height justify-content-around ">
                         <PoseGroup>
                             {productsList.map((product, index)=>{
                                 if(product.isPublished === "true" && product.show ){
                                     return (
-                                        <FadeInProducts  key={index} className="col-product col-xs-12 col-sm-6 col-md-3">
+                                        <FadeInProducts  key={index} className="col-product col-xs-12 col-sm-6 col-lg-3 text-center">
                                             <Product  key={index} id={index} {...product} handleClick={this.handleClick} />
                                         </FadeInProducts>
                                         );

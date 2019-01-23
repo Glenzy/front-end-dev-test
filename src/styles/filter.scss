@@ -1,41 +1,92 @@
 .filter-buttons {
     padding:0;
-    [class*="col-"] {
-        @media(min-width: 992px){
-        max-width: 173px;
-        }
-        @media(max-width: 992px){
-            flex: 0 0 50%;
-            max-width: 50%;
-        }
-        @media(max-width: 599px){
-            flex: 0 0 100%;
-            max-width: 100%;
+    margin:20px auto;
+    @media(min-width:768px){
+        .col-md-3 {
+            width: 20%;
+            flex:0 0 20%;
         }
     }
     .brand-filter {
-        button {
+        .btn {
             min-width: 100%;;
             transition: all 0.3s ease-in-out;
             background: none;
             border:0;
-            font-weight: 500;
             color:$telstraBlue;
-            font-weight:700;
+            font-weight:100;
+            font-size: 1.1rem;
+            @media(max-width:767px){
+                font-weight: 100;
+            }
         }
         .hr-hover-effect {
-            width: 0;
+            width: 30%;
             display: block;
             margin:0 auto;
             transition: all 0.3s ease-in-out;
         }
         &:hover {
            button{ color:$telstraBlueHover;}
-           .hr-hover-effect {width:50%;}
+           .hr-hover-effect {width:60%;}
         }
         &.active {
             button{ color:$telstraBlueHover;}
             .hr-hover-effect {width:50%;}
+        }
+    }
+    .activate-menu {
+        color:$telstraBlue;
+        background: none;
+        border:0;
+        font-weight:700;
+        .hr-hover-effect {
+            transition: all 0.8s ease-in-out;
+        }
+        .fa-angle-right {
+            color:$telstraBlue;
+            font-size: 23px;
+             margin-left: 5px;
+             vertical-align: bottom; 
+         }
+    }
+    @media(max-width: 767px){
+        margin: 5px auto;
+        .selection-row {
+            overflow:hidden;
+            transition:max-height 0.1s ease-in-out;
+            max-height:0;
+            .hr-hover-effect {
+                transition: all 0.3s ease-in-out;
+            }
+            .brand-filter {
+                opacity: 0;
+                transition:all 0.2s ease-in-out;
+                transform: translateX(-10px);
+                &:nth-child(2){
+                    transition:all 0.3s ease-in-out;
+                }
+                &:nth-child(3){
+                    transition:all 0.37s ease-in-out;
+                }
+                &:nth-child(4){
+                    transition:all 0.44s ease-in-out;
+                }
+                &:nth-child(5){
+                    transition:all 0.51s ease-in-out;
+                }
+            }
+            &.open{
+                   max-height:200px;
+                .hr-hover-effect {
+                    width: 75%;
+                }
+                .brand-filter {
+                    opacity: 1;
+                    transform: translateX(10px);
+                }
+
+            }
         }
     }
 }

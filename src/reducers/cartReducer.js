@@ -1,6 +1,6 @@
 import initialState from './initialState';
 
-const cartReducer = (state = initialState, action) => {
+const cartReducer = (state = initialState.products, action) => {
     switch(action.type){
         case 'ADD_TO_CART':
         return {
@@ -20,6 +20,7 @@ const cartReducer = (state = initialState, action) => {
             })
           ]
         };
+
       case 'REMOVE_FROM_CART':
       return {
         ...state,
@@ -38,11 +39,13 @@ const cartReducer = (state = initialState, action) => {
           })
         ]
       };
+
     case 'TOGGLE_CART':
       return {
         ...state,
         cartIsOpen: !state.cartIsOpen
       };
+
       case 'FILTER_BRANDS':
       return {
         ...state,
@@ -62,6 +65,7 @@ const cartReducer = (state = initialState, action) => {
           })
         ]
       };
+
       case 'SHOW_ALL_BRANDS':
       return {
         ...state,

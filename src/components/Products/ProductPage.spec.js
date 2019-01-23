@@ -7,7 +7,7 @@ function getVisibleProducts(){
     return productsList.filter(product => product.isPublished === "true");
 }
 let wrapper;
-let  productsList = initialState.productsList;
+let  productsList = initialState.products.productsList;
 let visibleProducts = getVisibleProducts();
 describe('The ProductPage component', () => {
 

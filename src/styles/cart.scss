@@ -56,7 +56,7 @@
             color: red;
         }
     }
-    @media(max-width: 576px) {
+    @media(max-width:992px) {
         z-index: 4;
         opacity: 0;
         position: fixed;
