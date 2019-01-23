@@ -14,7 +14,8 @@ export const Product = (props) => {
                 type="Add to cart" 
                 name={productName} 
                 classes=" btn btn-primary add-to-cart"  
-                icon="cart-plus"  
+                icon="cart-plus"
+                iconPosition="left"  
                 handleClick={handleClick}
                 />
         </div>

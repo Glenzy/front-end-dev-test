@@ -4,47 +4,61 @@ import { bindActionCreators } from 'redux';
 import * as actions from '../../actions/filterActions';
 import Button from '../Button'
 
+
 export class FilterProducts extends Component {
+
+    componentDidMount(){
+        const filterButtons =  this.removeDuplicates(this.props.productsList);
+        filterButtons.unshift('Show All');
+        return this.props.actions.addFilterMenuButton(filterButtons);
+    }
+
     handleClick = (event) => {
         const clickedElement = event.currentTarget.getAttribute('name');
-        if(clickedElement === "Show All Brands"){
+        this.props.actions.makeButtonActive(clickedElement);
+        if(clickedElement === "Show All"){
             return this.props.actions.showAllBrands();
         }
        return this.props.actions.filterBrands(clickedElement);
     }
+    openFilterMenu = () => this.props.actions.openFilterMenu();
     removeDuplicates = (productsList) =>{
         const brandNames = productsList.map((product) =>{
             return product.brand;
         });
-       return [...new Set(brandNames)]
+        const removedDuplicates = [...new Set(brandNames)];
+       return removedDuplicates
     }
 
+
     render() {
-    const {productsList} = this.props;
-    const productBrands = this. removeDuplicates(productsList);
+    const {showFilterMenu, filterButtons} = this.props.filterMenu;
         return ( 
         <section className="filter-buttons">
             <div className="container-fluid">
                 <div className="row">
-                    <div className="col-xs-12 col-md-3 col-lg-2 brand-filter">
+                    <div className="d-block d-md-none">
                         <Button 
-                            text="Show All"
-                            classes="btn "
+                            text="Filter brands"
+                            classes="activate-menu btn"
                             type="Brand filter"
                             name="Show All"
-                            handleClick={this.handleClick} 
+                            icon="angle-right"
+                            iconPosition="right"
+                            handleClick={this.openFilterMenu} 
                         />
-                            <hr className="hr-hover-effect" />
-                        </div>
-                    {productBrands.map((brand, index)=>{
+                    </div>
+                </div>
+                <div className={showFilterMenu ? 'row selection-row open ' : 'row selection-row closed'}> 
+                    {filterButtons && filterButtons.map((brand, index)=>{
                         return (
-                        <div key={index} className="col-xs-12 col-md-3 col-lg-2 brand-filter">
+                        <div key={index} className="col-xs-12 col-md-3 col-xl-2 brand-filter">
                             <Button
-                            text={brand} 
+                            text={brand.name} 
                             handleClick={this.handleClick} 
                             type="Brand filter"
-                            classes="btn"
-                            name={brand}
+                            classes={brand.active ? 'active btn' : 'btn'}
+                            name={brand.name}
                             />
                             <hr className="hr-hover-effect" />
                         </div>);
@@ -60,6 +74,7 @@ export class FilterProducts extends Component {
 function mapStateToProps(state) {
     return { 
         productsList: state.products.productsList,
+        filterMenu: state.filterMenu
     }
 }
 

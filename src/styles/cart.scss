@@ -56,7 +56,7 @@
             color: red;
         }
     }
-    @media(max-width: 576px) {
+    @media(max-width:992px) {
         z-index: 4;
         opacity: 0;
         position: fixed;
@@ -67,6 +67,8 @@
         background-color: transparent;
         .item-count {
             display: inline-block;
+            font-size: 1.2rem;
+            margin-left: 10px;
         }
         cursor: pointer;
         .card {

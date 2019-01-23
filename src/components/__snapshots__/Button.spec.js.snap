@@ -36,26 +36,9 @@ ShallowWrapper {
     "nodeType": "host",
     "props": Object {
       "children": Array [
-        <FontAwesomeIcon
-          aria-label="primary"
-          border={false}
-          className=""
-          fixedWidth={false}
-          flip={null}
-          icon="cart-plus"
-          inverse={false}
-          listItem={false}
-          mask={null}
-          pull={null}
-          pulse={false}
-          rotation={null}
-          size={null}
-          spin={false}
-          symbol={false}
-          title=""
-          transform={null}
-        />,
+        false,
         "Test Button",
+        false,
         false,
       ],
       "className": "test test-btn",
@@ -75,34 +58,9 @@ ShallowWrapper {
     },
     "ref": null,
     "rendered": Array [
-      Object {
-        "instance": null,
-        "key": undefined,
-        "nodeType": "function",
-        "props": Object {
-          "aria-label": "primary",
-          "border": false,
-          "className": "",
-          "fixedWidth": false,
-          "flip": null,
-          "icon": "cart-plus",
-          "inverse": false,
-          "listItem": false,
-          "mask": null,
-          "pull": null,
-          "pulse": false,
-          "rotation": null,
-          "size": null,
-          "spin": false,
-          "symbol": false,
-          "title": "",
-          "transform": null,
-        },
-        "ref": null,
-        "rendered": null,
-        "type": [Function],
-      },
+      false,
       "Test Button",
+      false,
       false,
     ],
     "type": "button",
@@ -114,26 +72,9 @@ ShallowWrapper {
       "nodeType": "host",
       "props": Object {
         "children": Array [
-          <FontAwesomeIcon
-            aria-label="primary"
-            border={false}
-            className=""
-            fixedWidth={false}
-            flip={null}
-            icon="cart-plus"
-            inverse={false}
-            listItem={false}
-            mask={null}
-            pull={null}
-            pulse={false}
-            rotation={null}
-            size={null}
-            spin={false}
-            symbol={false}
-            title=""
-            transform={null}
-          />,
+          false,
           "Test Button",
+          false,
           false,
         ],
         "className": "test test-btn",
@@ -153,34 +94,9 @@ ShallowWrapper {
       },
       "ref": null,
       "rendered": Array [
-        Object {
-          "instance": null,
-          "key": undefined,
-          "nodeType": "function",
-          "props": Object {
-            "aria-label": "primary",
-            "border": false,
-            "className": "",
-            "fixedWidth": false,
-            "flip": null,
-            "icon": "cart-plus",
-            "inverse": false,
-            "listItem": false,
-            "mask": null,
-            "pull": null,
-            "pulse": false,
-            "rotation": null,
-            "size": null,
-            "spin": false,
-            "symbol": false,
-            "title": "",
-            "transform": null,
-          },
-          "ref": null,
-          "rendered": null,
-          "type": [Function],
-        },
+        false,
         "Test Button",
+        false,
         false,
       ],
       "type": "button",

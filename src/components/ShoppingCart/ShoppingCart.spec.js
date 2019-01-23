@@ -5,7 +5,7 @@ import { ShoppingCart } from './ShoppingCart.jsx';
 
 
 let wrapper;
-const productsList = initialState.productsList;
+const productsList = initialState.products.productsList;
 const defaultProps = {
     productsList,
     itemsInCart:1,
