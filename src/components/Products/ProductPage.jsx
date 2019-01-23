@@ -8,7 +8,7 @@ import MessageBlock from '../MessageBlock.jsx'
 
 const FadeInProducts = posed.div({
     enter: { x: 0, y:0, opacity: 1 },
-    exit: { x: 450, y:-50, opacity: 0, transition: { duration: 200 } }
+    exit: { x: 900, y:-100, opacity: 0, transition: { duration: 400 } }
   });
 export class ProductPage extends Component {
     handleClick = (event) => {

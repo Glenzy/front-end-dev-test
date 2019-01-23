@@ -5,15 +5,39 @@ const filterReducer = (state = initialState.filterMenu, action) => {
     case 'ADD_FILTER_MENU_LIST':
         return {
             ...state,
-            filterButtons: action.filterButtons
+            filterButtons:[ 
+              ...action.filterButtons.map((button)=>{
+                return {
+                  name:button,
+                  active:false
+                }
+              })
+            ]
         };
-    case 'FILTER_MENU_INTERACTION':
+    case 'OPEN_FILTER_MENU':
       return {
         ...state,
         showFilterMenu:!state.showFilterMenu
       };
     case 'MAKE_ACTIVE':
-      return state;
+      return {
+        ...state,
+        filterButtons: state.filterButtons.map((filterButton) =>{
+          if(filterButton.name === action.name && !filterButton.active){
+           return {
+            ...filterButton,
+            active:true
+           }; 
+          } else if(filterButton.name != action.name && filterButton.active){
+            return {
+              ...filterButton,
+              active:false
+             }; 
+          } else {
+            return filterButton;
+          }
+        })
+      };
     default:
       return state;
     }

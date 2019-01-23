@@ -9,19 +9,19 @@ export class FilterProducts extends Component {
 
     componentDidMount(){
         const filterButtons =  this.removeDuplicates(this.props.productsList);
+        filterButtons.unshift('Show All');
         return this.props.actions.addFilterMenuButton(filterButtons);
     }
 
     handleClick = (event) => {
         const clickedElement = event.currentTarget.getAttribute('name');
+        this.props.actions.makeButtonActive(clickedElement);
         if(clickedElement === "Show All"){
             return this.props.actions.showAllBrands();
         }
        return this.props.actions.filterBrands(clickedElement);
     }
-
-    activateMenu = () => this.props.actions.activateMenu();
-
+    openFilterMenu = () => this.props.actions.openFilterMenu();
     removeDuplicates = (productsList) =>{
         const brandNames = productsList.map((product) =>{
             return product.brand;
@@ -45,30 +45,20 @@ export class FilterProducts extends Component {
                             name="Show All"
                             icon="angle-right"
                             iconPosition="right"
-                            handleClick={this.activateMenu} 
+                            handleClick={this.openFilterMenu} 
                         />
                     </div>
                 </div>
                 <div className={showFilterMenu ? 'row selection-row open ' : 'row selection-row closed'}> 
-                    <div className="col-xs-12 col-md-3 col-xl-2 brand-filter">
-                        <Button 
-                            text="Show All"
-                            classes="btn "
-                            type="Brand filter"
-                            name="Show All"
-                            handleClick={this.handleClick} 
-                        />
-                        <hr className="hr-hover-effect" />
-                    </div>
                     {filterButtons && filterButtons.map((brand, index)=>{
                         return (
                         <div key={index} className="col-xs-12 col-md-3 col-xl-2 brand-filter">
                             <Button
-                            text={brand} 
+                            text={brand.name} 
                             handleClick={this.handleClick} 
                             type="Brand filter"
-                            classes="btn"
-                            name={brand}
+                            classes={brand.active ? 'active btn' : 'btn'}
+                            name={brand.name}
                             />
                             <hr className="hr-hover-effect" />
                         </div>);

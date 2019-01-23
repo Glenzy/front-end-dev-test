@@ -6,38 +6,34 @@ const cartReducer = (state = initialState.products, action) => {
         return {
           ...state,
           itemsInCart:state.itemsInCart+1,
-          productsList:[
-            ...state.productsList.map((product) => {
-              if(product.productName === action.productName){
-                return {
-                  ...product,
-                inCart:true,
-                show:false,
-                };
-              }  else {
-                return product;
-              }
-            })
-          ]
+          productsList: state.productsList.map((product) => {
+            if(product.productName === action.productName){
+              return {
+                ...product,
+              inCart:true,
+              show:false,
+              };
+            }  else {
+              return product;
+            }
+          })
         };
 
       case 'REMOVE_FROM_CART':
       return {
         ...state,
         itemsInCart:state.itemsInCart-1,
-        productsList:[
-          ...state.productsList.map((product) => {
-            if(product.productName === action.productName){
-              return {
-                ...product,
-              inCart:false,
-              show:true,
-              };
-            }  else {
-              return product;
-            }
-          })
-        ]
+        productsList: state.productsList.map((product) => {
+          if(product.productName === action.productName){
+            return {
+              ...product,
+            inCart:false,
+            show:true,
+            };
+          }  else {
+            return product;
+          }
+        })
       };
 
     case 'TOGGLE_CART':
@@ -49,34 +45,30 @@ const cartReducer = (state = initialState.products, action) => {
       case 'FILTER_BRANDS':
       return {
         ...state,
-        productsList:[
-          ...state.productsList.map((product) => {
-            if(product.brand === action.brand){
-              return {
+        productsList:state.productsList.map((product) => {
+          if(product.brand === action.brand){
+            return {
+              ...product,
+            show:true
+            };
+          }  else {
+            return {
                 ...product,
-              show:true
+              show:false
               };
-            }  else {
-              return {
-                  ...product,
-                show:false
-                };
-            }
-          })
-        ]
+          }
+        })
       };
 
       case 'SHOW_ALL_BRANDS':
       return {
         ...state,
-        productsList:[
-          ...state.productsList.map((product) => {
-              return {
-                ...product,
-              show:true
-              };
-          })
-        ]
+        productsList:state.productsList.map((product) => {
+            return {
+              ...product,
+            show:true
+            };
+        })
       };
     default:
       return state;
