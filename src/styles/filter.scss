@@ -18,14 +18,21 @@
             font-size: 1.1rem;
             border-radius: 30px;
             border:3px #fff solid;
-            @media(max-width:767px){
-                font-weight: 100;
-            }
+
             &.active {
                 color:#dc4cc7;
                 font-weight:700;
                 border-radius: 30px;
                 border:3px #dc4cc7 solid;
+            }
+            @media(max-width:767px){
+                font-weight: 100;
+                border:0;
+                border-radius: 0;
+                &.active {
+                    border-radius: 0;
+                    border:0;
+                }
             }
         }
         .hr-hover-effect {
