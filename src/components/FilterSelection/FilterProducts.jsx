@@ -32,7 +32,7 @@ export class FilterProducts extends Component {
 
 
     render() {
-    const {showFilterMenu, filterButtons} = this.props.filterMenu;
+    const {openFilterMenu, filterButtons} = this.props.filterMenu;
         return ( 
         <section className="filter-buttons">
             <div className="container-fluid">
@@ -49,7 +49,7 @@ export class FilterProducts extends Component {
                         />
                     </div>
                 </div>
-                <div className={showFilterMenu ? 'row selection-row open ' : 'row selection-row closed'}> 
+                <div className={openFilterMenu ? 'row selection-row open ' : 'row selection-row closed'}> 
                     {filterButtons && filterButtons.map((brand, index)=>{
                         return (
                         <div key={index} className="col-xs-12 col-md-3 col-xl-2 brand-filter">

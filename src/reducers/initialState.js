@@ -1,6 +1,6 @@
 export default {
     filterMenu:{
-        showFilterMenu:false,
+        openFilterMenu:false,
         filterButtons:[],
     },
     products:{
