@@ -46,7 +46,7 @@ const cartReducer = (state = initialState.products, action) => {
       return {
         ...state,
         productsList:state.productsList.map((product) => {
-          if(product.brand === action.brand){
+          if(product.brand === action.brand && !product.inCart){
             return {
               ...product,
             show:true
@@ -64,10 +64,17 @@ const cartReducer = (state = initialState.products, action) => {
       return {
         ...state,
         productsList:state.productsList.map((product) => {
+          if(product.inCart){
+            return {
+              ...product,
+            show:false
+            };
+          } else {
             return {
               ...product,
             show:true
             };
+          }
         })
       };
     default:
