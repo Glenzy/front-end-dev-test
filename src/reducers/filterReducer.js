@@ -17,7 +17,7 @@ const filterReducer = (state = initialState.filterMenu, action) => {
     case 'OPEN_FILTER_MENU':
       return {
         ...state,
-        showFilterMenu:!state.showFilterMenu
+        openFilterMenu:!state.openFilterMenu
       };
     case 'MAKE_ACTIVE':
       return {
