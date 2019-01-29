@@ -70,6 +70,11 @@ const productsReducer = (state = initialState.products, action) => {
             show:true,
             filtered:false
             };
+          } else if(product.brand === action.brand && product.inCart){
+            return {
+              ...product,
+            filtered:false
+            };
           }  else {
             return {
                 ...product,

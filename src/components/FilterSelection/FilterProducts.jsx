@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
 import * as actions from '../../actions/filterActions';
-import Button from '../Button'
+import Button from '../Button.jsx'
 
 
 export class FilterProducts extends Component {
