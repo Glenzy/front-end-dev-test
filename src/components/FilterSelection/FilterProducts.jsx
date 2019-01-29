@@ -7,12 +7,6 @@ import Button from '../Button'
 
 export class FilterProducts extends Component {
 
-    componentDidMount(){
-        const filterButtons =  this.removeDuplicates(this.props.productsList);
-        filterButtons.unshift('Show All');
-        return this.props.actions.addFilterMenuButton(filterButtons);
-    }
-
     handleClick = (event) => {
         const clickedElement = event.currentTarget.getAttribute('name');
         this.props.actions.makeButtonActive(clickedElement);

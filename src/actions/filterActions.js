@@ -14,6 +14,3 @@ export function makeButtonActive(name){
 export function openFilterMenu(){
     return {type:types.OPEN_FILTER_MENU}
 }
-export function addFilterMenuButton(filterButtons){
-    return { type: types.ADD_FILTER_MENU_LIST,filterButtons}
-}
