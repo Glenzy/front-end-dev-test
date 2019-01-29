@@ -13,7 +13,7 @@ export class ShoppingCart extends Component {
     toggleCart = ()=>  this.props.actions.toggleCart();
 
     render() {
-    const {productsList, itemsInCart, cartIsOpen} = this.props;
+    const {cartList, itemsInCart, cartIsOpen} = this.props;
     const hasItem = itemsInCart > 0  ? 'has-item' : '';
         return ( 
         <section className={cartIsOpen ? `shopping-cart shown ${hasItem}` : `shopping-cart ${hasItem} `} name="shopping-cart">
@@ -24,18 +24,17 @@ export class ShoppingCart extends Component {
                             <li className="list-group-item cart-icon" onClick={this.toggleCart}>
                                 <FontAwesomeIcon icon={"shopping-cart"}  aria-label="Shopping cart"/>
                                 <p className="item-count">{itemsInCart > 0  ? `${itemsInCart}` : ''}</p>
-                                <h5 className="d-none d-sm-inline-block">Shopping cart</h5>
+                                <h5 className="d-none d-lg-inline-block">Shopping cart</h5>
                             </li>
                             { itemsInCart > 0 ? null : <li className="list-group-item cart-item">No items in cart</li>}
                             {
-                                productsList.map((product, index) => {
-                                    if (product.inCart) {
-                                        return <ShoppingCartItem  key={index} id={index} {...product} handleClick={this.handleClick} />
-                                    } else {
-                                        return;
-                                    }
+                               cartList.map((product, index) => {
+                                   if(product){
+                                    return <ShoppingCartItem  key={index} id={index} {...product} handleClick={this.handleClick} />
+                                   } else {
+                                       return;
+                                   }
                                 })
-                               
                             } 
                         </ul>
                     </div>
@@ -49,9 +48,9 @@ export class ShoppingCart extends Component {
 
 function mapStateToProps(state) {
     return { 
-        productsList: state.products.productsList,
-        itemsInCart: state.products.itemsInCart,
-        cartIsOpen:state.products.cartIsOpen,
+        cartList: state.cart.cartList,
+        itemsInCart: state.cart.itemsInCart,
+        cartIsOpen:state.cart.cartIsOpen,
     }
 }
 

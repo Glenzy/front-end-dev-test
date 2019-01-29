@@ -1,6 +1,6 @@
 .col-product {
-
-    &:not(:first-child):after {
+    @media(min-width:992px){
+    &:not(:first-child):not(:nth-child(5n)):after {
         content: "";
         background: #ccc;
         position: absolute;
@@ -9,6 +9,18 @@
         height: 75%;
         width: 1px;
       }
+    }
+    @media(max-width:991px){
+        &:not(:nth-child(odd)):after {
+            content: "";
+            background: #ccc;
+            position: absolute;
+            bottom: 10%;
+            left: 0;
+            height: 75%;
+            width: 1px;
+          }
+    }
     @media (max-width:576px){
         border-top: 1px solid #ccc;
         &:not(:first-child){

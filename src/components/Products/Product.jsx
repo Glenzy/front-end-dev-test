@@ -1,6 +1,6 @@
 import React from 'react';
 import { productPropTypes } from '../../types/productPropTypes';
-import Button  from '../Button';
+import Button  from '../Button.jsx';
 
 export const Product = (props) => {
     const {productName, productImage, price, handleClick} = {...props}; 

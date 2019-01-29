@@ -2,16 +2,10 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
 import * as actions from '../../actions/filterActions';
-import Button from '../Button'
+import Button from '../Button.jsx'
 
 
 export class FilterProducts extends Component {
-
-    componentDidMount(){
-        const filterButtons =  this.removeDuplicates(this.props.productsList);
-        filterButtons.unshift('Show All');
-        return this.props.actions.addFilterMenuButton(filterButtons);
-    }
 
     handleClick = (event) => {
         const clickedElement = event.currentTarget.getAttribute('name');
@@ -37,7 +31,7 @@ export class FilterProducts extends Component {
         <section className="filter-buttons">
             <div className="container-fluid">
                 <div className="row">
-                    <div className="d-block d-md-none">
+                    <div className="d-block d-lg-none">
                         <Button 
                             text="Filter brands"
                             classes="activate-menu btn"
@@ -52,7 +46,7 @@ export class FilterProducts extends Component {
                 <div className={openFilterMenu ? 'row selection-row open ' : 'row selection-row closed'}> 
                     {filterButtons && filterButtons.map((brand, index)=>{
                         return (
-                        <div key={index} className="col-xs-12 col-md-3 col-xl-2 brand-filter">
+                        <div key={index} className="col-xs-12 col-lg-3 col-xl-2 brand-filter">
                             <Button
                             text={brand.name} 
                             handleClick={this.handleClick} 

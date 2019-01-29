@@ -33,6 +33,7 @@
         "@fortawesome/fontawesome-svg-core": "1.2.12",
         "@fortawesome/free-solid-svg-icons": "5.6.3",
         "@fortawesome/react-fontawesome": "0.1.4",
+        "axios": "^0.18.0",
         "bootstrap-scss": "^4.2.1",
         "connected-react-router": "4.4.1",
         "i": "0.3.6",
