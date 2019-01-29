@@ -68,7 +68,8 @@
         .item-count {
             display: inline-block;
             font-size: 1.2rem;
-            margin-left: 10px;
+            margin: 0 auto 0 14px;
+            vertical-align: middle;
         }
         cursor: pointer;
         .card {
@@ -79,6 +80,7 @@
                 transition: opacity 0.3s ease-in-out;
                 &.cart-icon {
                     opacity: 1;
+                    vertical-align: middle;
                 }
                 &.cart-item {}
             }

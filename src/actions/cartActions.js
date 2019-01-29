@@ -10,6 +10,7 @@ export function addToCart(productName){
         const product = getCurrentState.products.productsList.filter((product)=> product.productName === productName);
         dispatch({type: types.ADD_TO_CART_UPDATE_PRODUCTS, productName})
         dispatch({ type: types.ADD_TO_CART, product})
+        dispatch({ type: types.TOGGLE_CART, product})
     }
 }
 
