@@ -1,4 +1,9 @@
 .shopping-cart {
+    @media(max-width:992px){
+        .container {
+            max-width: 540px;
+        }
+    }
     .card {
         width: 90%;
         border: 0;

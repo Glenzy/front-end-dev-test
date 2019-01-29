@@ -59,9 +59,13 @@
         &.shopping-cart {
             width: $cartWidth;
         }
+        @media(max-width:1440px){
+            &.filter-buttons{
+                width: 100%;
+            }
+        }
         @media(max-width: 992px) {
             &.product-list,
-            &.filter-buttons,
             &.shopping-cart {
                 width: 100%;
             }
