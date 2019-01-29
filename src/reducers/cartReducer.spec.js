@@ -16,7 +16,7 @@ describe('The cart reducer', () => {
     it('should handle REMOVE_FROM_CART', () => {
         const productName = 'Apple iPhone X';
         const action = { type: 'REMOVE_FROM_CART', productName}; 
-        expect(cartReducer(expectedAddCartState, action)).toEqual(defaultState);
+        expect(cartReducer(expectedAddCartState, action)).toEqual(expectedRemoveFromCartState);
     });
 
     it('should handle TOGGLE_CART', () => {
@@ -42,7 +42,7 @@ const defaultState = {
 };
 const expectedAddCartState = {
     itemsInCart:1,
-    cartIsOpen:false,
+    cartIsOpen:true,
     cartList: [
         {
             "isPublished": "true",
@@ -52,4 +52,9 @@ const expectedAddCartState = {
             "brand": "Apple",
         },
     ]
+};
+const expectedRemoveFromCartState = {
+    itemsInCart:0,
+    cartIsOpen:true,
+    cartList: [],
 };

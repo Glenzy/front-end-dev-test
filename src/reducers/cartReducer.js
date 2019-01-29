@@ -15,6 +15,7 @@ const cartReducer = (state = initialState.cart, action) => {
         return {
           ...state,
             itemsInCart:state.itemsInCart+1,
+            cartIsOpen:true,
             cartList:[...state.cartList, ...action.product]
         };
 
